@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#375EAB">
+
+    <title>plane - Go Documentation Server</title>
+
+    <link type="text/css" rel="stylesheet" href="../lib/godoc/style.css">
+
+    <script>window.initFuncs = [];</script>
+    <script src="../lib/godoc/jquery.js" defer></script>
+
+
+
+    <script>var goVersion = "go1.19.4";</script>
+    <script src="../lib/godoc/godocs.js" defer></script>
+</head>
+
+<body>
+
+    <div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+        ...
+    </div><!-- #lowframe -->
+
+    <div id="topbar" class="wide">
+        <div class="container">
+            <div class="top-heading" id="heading-wide">Go Documentation Server</div>
+            <a href="plane.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+        </div>
+    </div>
+
+
+
+    <div id="page" class="wide">
+        <div class="container">
+
+
+            <h1>
+                Package plane
+                <span class="text-muted"></span>
+            </h1>
+
+
+
+
+
+
+
+            <div id="nav"></div>
+
+
+            <!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+            <!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+            <script>
+                document.ANALYSIS_DATA = null;
+                document.CALLGRAPH = null;
+            </script>
+
+
+
+            <div id="short-nav">
+                <dl>
+                    <dd><code>import "plane"</code></dd>
+                </dl>
+                <dl>
+                    <dd><a href="plane.html#pkg-overview" class="overviewLink">Overview</a></dd>
+                    <dd><a href="plane.html#pkg-index" class="indexLink">Index</a></dd>
+
+
+                </dl>
+            </div>
+            <!-- The package's Name is printed as title by the top-level template -->
+            <div id="pkg-overview" class="toggleVisible">
+                <div class="collapsed">
+                    <h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+                </div>
+                <div class="expanded">
+                    <h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+
+
+                </div>
+            </div>
+
+            <div id="pkg-index" class="toggleVisible">
+                <div class="collapsed">
+                    <h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+                </div>
+                <div class="expanded">
+                    <h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+                    <!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+                    <div id="manual-nav">
+                        <dl>
+
+                            <dd><a href="plane.html#pkg-constants">Constants</a></dd>
+
+
+
+
+
+                            <dd><a href="plane.html#Plane">type Plane</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#InitNewPlane">func InitNewPlane(radius, workers uint) *Plane</a></dd>
+
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.GetResults">func (p Plane) GetResults() []uint64</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.IsFinished">func (p Plane) IsFinished() bool</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.IsRunning">func (p Plane) IsRunning() bool</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.NotifyOnFinish">func (p Plane) NotifyOnFinish() &lt;-chan struct{}</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.Start">func (p *Plane) Start()</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.Stop">func (p *Plane) Stop()</a></dd>
+
+
+                            <dd>&nbsp; &nbsp; <a href="plane.html#Plane.TryToRestoreState">func (p *Plane) TryToRestoreState() error</a></dd>
+
+
+
+                        </dl>
+                    </div><!-- #manual-nav -->
+
+
+
+
+                    <h3>Package files</h3>
+                    <p>
+                        <span style="font-size:90%">
+
+                            <a href="../src/plane/calculations.go.html">calculations.go</a>
+
+                            <a href="../src/plane/fileio.go.html">fileio.go</a>
+
+                            <a href="../src/plane/fraction.go.html">fraction.go</a>
+
+                            <a href="../src/plane/plane.go.html">plane.go</a>
+
+                        </span>
+                    </p>
+
+                </div><!-- .expanded -->
+            </div><!-- #pkg-index -->
+
+
+
+
+            <h2 id="pkg-constants">Constants</h2>
+
+            <p>sets cache for numbers [0; CACHESIZE-1].
+
+            <pre>const <span id="CACHESIZE">CACHESIZE</span> = 10 + 1</pre>
+
+
+
+
+
+
+
+            <h2 id="Plane">type <a href="../src/plane/plane.go@s=172%253A327.html#L1">Plane</a>
+                <a class="permalink" href="plane.html#Plane">&#xb6;</a>
+
+
+            </h2>
+            <p>Plane represents a set of all fractions which would be processed.
+                It is defined as first quarter of circle with radius Radius.
+
+            <pre>type Plane struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+            <h3 id="InitNewPlane">func <a href="../src/plane/plane.go@s=609%253A655.html#L15">InitNewPlane</a>
+                <a class="permalink" href="plane.html#InitNewPlane">&#xb6;</a>
+
+
+            </h3>
+            <pre>func InitNewPlane(radius, workers <a href="builtin.html#uint">uint</a>) *<a href="plane.html#Plane">Plane</a></pre>
+            <p>InitNewPlane creates and returns new plane with passed configuration.
+
+
+
+
+
+
+
+            <h3 id="Plane.GetResults">func (Plane) <a href="../src/plane/plane.go@s=1380%253A1416.html#L38">GetResults</a>
+                <a class="permalink" href="plane.html#Plane.GetResults">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p <a href="plane.html#Plane">Plane</a>) GetResults() []<a href="builtin.html#uint64">uint64</a></pre>
+            <p>GetResults returns slice with total occurrences of elements of continued fractions in set plane.
+                If calculations are running, the function returns nil.
+
+
+
+
+
+
+            <h3 id="Plane.IsFinished">func (Plane) <a href="../src/plane/plane.go@s=1743%253A1775.html#L54">IsFinished</a>
+                <a class="permalink" href="plane.html#Plane.IsFinished">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p <a href="plane.html#Plane">Plane</a>) IsFinished() <a href="builtin.html#bool">bool</a></pre>
+            <p>IsFinished reports whether the module has processed whole plane.
+
+
+
+
+
+
+            <h3 id="Plane.IsRunning">func (Plane) <a href="../src/plane/plane.go@s=1615%253A1646.html#L49">IsRunning</a>
+                <a class="permalink" href="plane.html#Plane.IsRunning">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p <a href="plane.html#Plane">Plane</a>) IsRunning() <a href="builtin.html#bool">bool</a></pre>
+            <p>IsRunning reports whether calculations are still running.
+
+
+
+
+
+
+            <h3 id="Plane.NotifyOnFinish">func (Plane) <a href="../src/plane/plane.go@s=1136%253A1183.html#L32">NotifyOnFinish</a>
+                <a class="permalink" href="plane.html#Plane.NotifyOnFinish">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p <a href="plane.html#Plane">Plane</a>) NotifyOnFinish() &lt;-chan struct{}</pre>
+            <p>NotifyOnFinish returns channel which would receive signal when all calculations have finished.
+                After receiving signal, it is safe to read obtained data.
+
+
+
+
+
+
+            <h3 id="Plane.Start">func (*Plane) <a href="../src/plane/calculations.go@s=510%253A533.html#L9">Start</a>
+                <a class="permalink" href="plane.html#Plane.Start">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p *<a href="plane.html#Plane">Plane</a>) Start()</pre>
+            <p>Start initializes calculations with given concurrent worker amount.
+                Start does not block. To know, when have calculations finished, use NotifyOnFinish.
+                If calculations are already running, Start does nothing.
+                The function also calls interrupt listener, which will intercept one keyboard interrupt to correctly stop calculations.
+
+
+
+
+
+
+            <h3 id="Plane.Stop">func (*Plane) <a href="../src/plane/calculations.go@s=1347%253A1369.html#L46">Stop</a>
+                <a class="permalink" href="plane.html#Plane.Stop">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p *<a href="plane.html#Plane">Plane</a>) Stop()</pre>
+            <p>Stop prematurely stops calculations.
+                When Stop exits, it is safe to read obtained data.
+
+
+
+
+
+
+            <h3 id="Plane.TryToRestoreState">func (*Plane) <a href="../src/plane/fileio.go@s=255%253A296.html#L4">TryToRestoreState</a>
+                <a class="permalink" href="plane.html#Plane.TryToRestoreState">&#xb6;</a>
+
+
+            </h3>
+            <pre>func (p *<a href="plane.html#Plane">Plane</a>) TryToRestoreState() <a href="builtin.html#error">error</a></pre>
+            <p>TryToRestoreState tries to load configuration for plane of specific radius.
+                If error is returned, it might be *PathError or custom error with no type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="footer">
+                Except as noted,
+                the content of this page is licensed under the
+                Creative Commons Attribution 3.0 License,
+                and code is licensed under a BSD license.
+            </div>
+
+        </div><!-- .container -->
+    </div><!-- #page -->
+</body>
+
+</html>
